@@ -10,5 +10,5 @@ var MobileSchema = mongoose.Schema({
     bestSeller: Boolean
 })
 //note: mobile is collection name
-var MobileModel = mongoose.model("dien thoai", MobileSchema, "mobile")
+const MobileModel = mongoose.model("dien thoai", MobileSchema, "mobile")
 module.exports = MobileModel

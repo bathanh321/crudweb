@@ -1,0 +1,34 @@
+
+<div class="container">
+    <h1 style="text-align: center">Mobile List</h1>
+    <a href="#" class="btn btn-success">Add new mobile</a>
+    <a href="/mobile/deleteall" onclick="return confirm('Are you sure to delete all?')" class="btn btn-danger">Delete all <i class="fa-solid fa-skull"></i></a>
+<table class="table table-danger mt-3">
+  <tr>
+    <th colspan="8">Mobile List</th>
+  </tr>
+  <tr>
+    <th>Brand</th>
+    <th>Model</th>
+    <th>Price</th>
+    <th>Date</th>
+    <th>Image</th>
+    <th>Best Seller</th>
+    <th>Quantity</th>
+    <th>Action</th>
+  </tr>
+  {{#each mobiles}}
+    <tr>
+      <th>{{brandName}}</th>
+      <th>{{phoneModel}}</th>
+      <th>{{price}}$</th>
+      <th>{{dateFormat date "DD/MM/YYYY"}}</th>
+      <th><img src="{{ image }}" width="100" height="100"></th>
+      <th>{{bestSeller}}</th>
+      <th>{{quantity}}</th>
+      <th><a type="button" class="btn btn-warning">Edit <i class="fa-solid fa-pen-to-square"></i></a> <a href="/mobile/delete/{{_id}}" class="btn btn-danger" onclick="return confirm('Are you sure to delete this mobie?')">Delete <i class="fa-solid fa-trash"></i></a></th>
+    </tr>
+  {{/each}}
+
+</table>
+</div>
