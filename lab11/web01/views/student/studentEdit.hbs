@@ -1,0 +1,55 @@
+<a href="/student" class="btn btn-primary" onclick="return confirm('Are you want to back to main screen? Your data may not be saved')">Back</a>
+<div class="container col-md-8 mt-4 mb-3 card bg-light">
+
+    <form action="/student/edit/{{student._id}}" method="post">
+    <h1 class="text text-danger text-center">Edit student</h1>
+    <div class="form-group mt-2">
+        <label for="">Full Name: </label>
+        <input class="form-control" type="text" name="name" value="{{student.name}}" required>
+    </div>
+    <div class="form-group mt-2">
+        <label for="">Date of Birth: </label>
+        <input class="form-control" type="date" name="dob" value="{{student.dob}}" required>
+    </div>
+    <div class="form-group mt-2">
+        <label for="">Gender: </label>
+        <br>
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female
+        <input type="radio" name="gender" value="Other">Other
+    </div>
+    <div class="form-group mt-2">
+        <label for="">Department: </label>
+        <select class="form-control" name="department" id="">
+            <option value="IT">IT</option>
+            <option value="Business">Business</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Design">Design</option>
+        </select>
+    </div>
+    <div class="form-group mt-2">
+        <label for="">Class: </label>
+        <input class="form-control" type="text" name="class" value="{{student.class}}" required>
+    </div>
+    <div class="form-group mt-2">
+        <label for="">Avatar: </label>
+        <img src="/images/{{student.image}}" alt="" width="160" height="200">
+        <input class="form-control" type="file" name="image" value="{{student.image}}" required>
+    </div>
+    <div class="form-group mt-2">
+        <label for="">GPA: </label>
+        <input class="form-control" type="text" name="gpa" value="{{student.gpa}}" required>
+    </div>
+    <div class="form-group mt-2">
+        <label for="">Student Year: </label>
+        <input class="form-control" type="number" name="studentYear" value="{{student.studentYear}}" required>
+    </div>
+    <div class="form-group mt-2">
+        <label for="">Sound: </label>
+        <input class="form-control" type="text" name="sound" value="{{student.sound}}" required>
+    </div>
+    <div class="form-group mt-3 mb-3 text-center">
+        <input type="submit" class="btn btn-success" value="Edit">
+    </div>
+    </form>
+</div>

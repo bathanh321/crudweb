@@ -1,0 +1,41 @@
+<div class="container text-center:mt-3 mb-3">
+            <th><a href="/student/add" class="btn btn-primary">ADD</a></th>
+
+    <table class="table table-success" border="1">
+        <tr>
+            <th colspan="10">
+                <h1 class="text text-primary">STUDENT LIST</h1>
+            </th>
+        </tr>
+        
+        <tr>
+            <th>Name</th>
+            <th>Date of Birth</th>
+            <th>Gender</th>
+            <th>Department</th>
+            <th>Class</th>
+            <th>Image</th>
+            <th>GPA</th>
+            <th>Student Year</th>
+            <th>Sound</th>
+            <th>Menu</th>
+        </tr>
+            {{#each students }}
+               <tr>
+                <td>{{name}}</td>
+                <td>{{dateFormat dob "DD/MM/YYYY" }}</td>
+                <td>{{gender}}</td>
+                <td>{{department}}</td>
+                <td>{{class}}</td>
+                <td><img src="/images/{{image}}" alt="" width="160" height="200"></td>
+                <td>{{gpa}}</td>
+                <td>{{studentYear}}</td>
+               
+                <td><iframe width="110" height="200" src="{{sound}}" frameborder="0" scrolling="no"></iframe></td>
+                 <td><a class="btn btn-warning" href="/student/edit/{{_id}}">Edit</a>
+                    <a class="btn btn-danger"href="/student/delete/{{_id}}" onclick="return confirm('Are you sure to delete this student?')">Delete</a>
+                </td>
+               </tr> 
+            {{/each}}
+    </table>
+</div>

@@ -22,4 +22,18 @@ router.get('/deleteall', async(req, res)=>{
     .catch((error)=> console.log("delete failed"))
     res.redirect('mobile')
 })
+router.get('/detail/:id', async(req, res)=>{
+    var id = req.params.id
+    var mobile = await MobileModel.findById(id)
+    res.render('mobile/detail', {mobile : mobile})
+})
+router.post('/order', async(req, res)=>{
+    var data = req.body
+    var id = data.id
+    var mobile = await MobileModel.findById(id)
+    var price = data.price
+    var quantity = data.quantity
+    var total = price * quantity
+    res.render('mobile/order', {mobile: mobile, quantity: quantity, price: price, total: total})
+})
 module.exports = router

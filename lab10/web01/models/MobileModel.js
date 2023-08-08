@@ -7,7 +7,8 @@ var MobileSchema = mongoose.Schema({
     price: Number,
     date: String,
     image: String,
-    bestSeller: Boolean
+    bestSeller: Boolean,
+    background: String
 })
 //note: mobile is collection name
 const MobileModel = mongoose.model("dien thoai", MobileSchema, "mobile")
